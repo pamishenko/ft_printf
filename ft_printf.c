@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttanja <ttanja@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:01:19 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/03 22:31:52 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/08 16:19:11 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_is_convesion(t_flags **flags, const char **format, size_t *i)
 	return (0);
 }
 
-void	ft_parse_flags(t_flags **flags, const char **format, size_t *i)
+void	ft_parse_flags(t_flags **flags, const char **format, size_t *i, va_list *ap)
 {
 	ft_flag_init(flags);
 	while (((*format)[*i]) && !ft_is_convesion(flags, format, i))
@@ -57,7 +57,7 @@ void	ft_parse_flags(t_flags **flags, const char **format, size_t *i)
 		else if ((*format)[*i] == '.')
 			(*flags)->dot = 1;
 		else if ((*format)[*i] == '*')
-			(*flags)->star = 1;
+			(*flags)->width = va_arg(*ap, unsigned int);
 		*i = *i + 1;
 	}
 }
@@ -90,7 +90,7 @@ void	ft_print_param(const char **format, size_t *i, va_list *ap)
 	t_flags		*flags;
 
 	*i = *i + 1;
-	ft_parse_flags(&flags, format, i);
+	ft_parse_flags(&flags, format, i, ap);
 	ft_print_element(&flags, ap);
 	free((t_flags *) flags);
 }

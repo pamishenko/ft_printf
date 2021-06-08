@@ -6,7 +6,7 @@
 /*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:02:58 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/07 20:07:59 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/08 16:19:45 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_flags_struct
 int		ft_printf(const char *format, ...);
 void	ft_print_param(const char **format, size_t *i, va_list *ap);
 void	ft_print_element(t_flags **flags, va_list *ap);
-void	ft_parse_flags(t_flags **flags, const char **format, size_t *i);
+void	ft_parse_flags(t_flags **flags, const char **format, size_t *i, va_list *ap);
 int		ft_is_convesion(t_flags **flags, const char **format, size_t *i);
 int		ft_count_razryad(long long int i, int base);
 void	ft_flag_init(t_flags **flags);
