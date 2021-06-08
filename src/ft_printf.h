@@ -6,7 +6,7 @@
 /*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:02:58 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/08 16:19:45 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/08 16:35:18 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <stdarg.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 typedef enum e_convers_type
 {
@@ -56,6 +56,7 @@ int		ft_pointer_format(unsigned long long int point, t_flags **flags);
 int		ft_putnumber_format(long long int ap, t_flags **flags);
 int		ft_unsigned_format(unsigned int ap, t_flags **flags);
 int		ft_xdigit_format(long long int ap, t_flags **flags);
+int		ft_putpercent_format(t_flags **flags);
 
 int	main(void);
 

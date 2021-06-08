@@ -6,7 +6,7 @@
 /*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:01:19 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/08 16:19:11 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/08 16:34:37 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ft_print_element(t_flags **flags, va_list *ap)
 	else if ((*flags)->conversion == XXDIGIT)
 		ft_xdigit_format(va_arg(*ap, int), flags);
 	else if ((*flags)->conversion == PERCENT)
-		ft_putchar_format(va_arg(*ap, int), flags);
+		ft_putpercent_format(flags);
 	ft_bzero(*flags, sizeof(t_flags));
 }
 

@@ -6,12 +6,13 @@
 #    By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 15:33:45 by pavel             #+#    #+#              #
-#    Updated: 2021/06/07 20:41:13 by ttanja           ###   ########.fr        #
+#    Updated: 2021/06/08 16:23:02 by ttanja           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
+PRINTF_PATH = src/
 FT_PRINTF_SRC = ft_printf.c \
 				ft_convert_base.c ft_count_razryad.c ft_flag_init.c \
 				ft_pointer_format.c ft_print_savesymbol.c \
@@ -30,7 +31,7 @@ LIBFT_SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c\
 			ft_itoa.c ft_strmapi.c ft_putchar_fd.c\
 			ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-OBJ += $(FT_PRINTF_SRC:.c=.o)
+OBJ += $(addprefix $(PRINTF_PATH),$(FT_PRINTF_SRC:.c=.o))
 OBJ += $(addprefix $(LIBFT_PATH),$(LIBFT_SRC:.c=.o))
 
 CC = gcc
