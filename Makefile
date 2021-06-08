@@ -6,7 +6,7 @@
 #    By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 15:33:45 by pavel             #+#    #+#              #
-#    Updated: 2021/06/08 16:23:02 by ttanja           ###   ########.fr        #
+#    Updated: 2021/06/08 17:21:34 by ttanja           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FT_PRINTF_SRC = ft_printf.c \
 				ft_pointer_format.c ft_print_savesymbol.c \
 				ft_putchar_format.c ft_putnumber_format.c \
 				ft_putstring_format.c ft_unsigned_format.c \
-				ft_xdigit_format.c
+				ft_xdigit_format.c ft_putpercent_format.c
 LIBFT_PATH = libft/
 LIBFT_SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c\
 			ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c\
