@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_savesymbol.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttanja <ttanja@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 20:21:02 by ttanja            #+#    #+#             */
-/*   Updated: 2021/05/28 20:41:51 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/08 19:08:06 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_print_savesymbol(t_flags **flag)
 		r = '0';
 	else
 		r = ' ';
-	while ((*flag)->width > 0)
+	while ((*flag)->width > 1)
 	{
 		ft_putchar_fd(r, 1);
 		(*flag)->width = (*flag)->width - 1;

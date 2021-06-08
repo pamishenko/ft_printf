@@ -6,7 +6,7 @@
 /*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:02:58 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/08 16:35:18 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/08 19:12:26 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,10 @@ int		ft_putchar_format(char ch, t_flags **flags);
 int		ft_putstring_format(char *str, t_flags **flags);
 void	ft_print_savesymbol(t_flags **flag);
 char	*ft_convert_base(unsigned long long int n, char base, t_flags **flag);
-int		ft_pointer_format(unsigned long long int point, t_flags **flags);
+int		ft_pointer_format(long long point, t_flags **flags);
 int		ft_putnumber_format(long long int ap, t_flags **flags);
 int		ft_unsigned_format(unsigned int ap, t_flags **flags);
 int		ft_xdigit_format(long long int ap, t_flags **flags);
 int		ft_putpercent_format(t_flags **flags);
-
-int	main(void);
 
 #endif
