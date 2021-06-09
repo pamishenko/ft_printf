@@ -6,7 +6,7 @@
 /*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:01:19 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/08 19:13:09 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/08 23:10:24 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_print_element(t_flags **flags, va_list *ap)
 	else if ((*flags)->conversion == STRING)
 		ft_putstring_format(va_arg(*ap, char *), flags);
 	else if ((*flags)->conversion == POINTER)
-		ft_pointer_format((va_arg(*ap, long long)), flags);
+		ft_putpointer_format((va_arg(*ap, long long)), flags);
 	else if ((*flags)->conversion == DIGIT)
 		ft_putnumber_format(va_arg(*ap, int), flags);
 	else if ((*flags)->conversion == IDIGIT)

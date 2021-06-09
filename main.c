@@ -2,11 +2,7 @@
 
 int	main(void)
 {
-	// ft_printf("digit = %*d, char = %c\n", 5, 33, 'G');
-	// ft_printf("percent = %%\n");
-	ft_printf("percent = %5%\n");
-	ft_printf("percent = %05%\n");
-	ft_printf("percent = %-05%\n");
-	ft_printf("percent = %-5%\n");
+	ft_printf("%23s\n");
+	printf("%23s\n","dfs");
 	return (0);
 }

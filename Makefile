@@ -6,7 +6,7 @@
 #    By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 15:33:45 by pavel             #+#    #+#              #
-#    Updated: 2021/06/08 18:41:56 by ttanja           ###   ########.fr        #
+#    Updated: 2021/06/08 23:10:49 by ttanja           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libftprintf.a
 PRINTF_PATH = src/
 FT_PRINTF_SRC = ft_printf.c \
 				ft_convert_base.c ft_count_razryad.c ft_flag_init.c \
-				ft_pointer_format.c ft_print_savesymbol.c \
+				ft_putpointer_format.c ft_print_savesymbol.c \
 				ft_putchar_format.c ft_putnumber_format.c \
 				ft_putstring_format.c ft_unsigned_format.c \
 				ft_xdigit_format.c ft_putpercent_format.c \

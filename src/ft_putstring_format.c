@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstring_format.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttanja <ttanja@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 18:20:20 by ttanja            #+#    #+#             */
-/*   Updated: 2021/05/28 20:31:50 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/08 23:21:30 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@ void	ft_set_width_string(t_flags **flag, unsigned int len)
 		(*flag)->width = 0;
 }
 
-int	ft_putstring_format(char *str, t_flags **flags)
+int	ft_putstring_format(char *strn, t_flags **flags)
 {
 	long unsigned int	result;
+	char				*str;
 
+	if (!strn)
+		str = "(null)";
+	else
+		str = strn;
 	result = 0;
 	ft_set_width_string(flags, ft_strlen(str));
 	if ((*flags)-> minus)
