@@ -6,7 +6,7 @@
 /*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:02:58 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/10 07:37:34 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/10 10:45:42 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ typedef struct s_flags_struct
 {
 	char			minus;
 	char			zero;
-	char			dot;
+	long long		dot;
 	char			star;
-	unsigned int	width;
+	long long		width;
 	t_conv_name		conversion;
 }	t_flags;
 
@@ -52,7 +52,7 @@ int					ft_count_razryad(long long int i, int base);
 void				ft_flag_init(t_flags **flags);
 int					ft_putchar_format(char ch, t_flags **flags);
 int					ft_putstring_format(char *str, t_flags **flags);
-unsigned long long	ft_print_savesymbol(t_flags **flag);
+long long			ft_print_savesymbol(t_flags **flag);
 char				*ft_convert_base(long long number, char base, t_flags **flag);
 int					ft_putpointer_format(long long point, t_flags **flags);
 int					ft_putnumber_format(long long int ap, t_flags **flags);

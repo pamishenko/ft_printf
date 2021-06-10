@@ -6,7 +6,7 @@
 #    By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 15:33:45 by pavel             #+#    #+#              #
-#    Updated: 2021/06/10 08:02:14 by ttanja           ###   ########.fr        #
+#    Updated: 2021/06/10 10:22:01 by ttanja           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ fclean: clean
 re: fclean all
 
 t: $(NAME)
-	$(CC) $(CFLAGS) -I $(HEADER) main.c $(NAME) -o test
+	$(CC) -g $(CFLAGS) -I $(HEADER) main.c $(NAME) -o test
 	./test
 
 .PHONY: all clean fclean re
