@@ -6,7 +6,7 @@
 /*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 18:20:20 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/08 23:21:30 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/10 08:07:16 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,14 @@ int	ft_putstring_format(char *strn, t_flags **flags)
 	ft_set_width_string(flags, ft_strlen(str));
 	if ((*flags)-> minus)
 	{
-		ft_putstr_fd(str, 1);
-		ft_print_savesymbol(flags);
+		result += ft_print_value(flags, str);
+		result += ft_print_savesymbol(flags);
 		result = ft_strlen(str) + (*flags)->width;
 	}
 	else
 	{
-		ft_print_savesymbol(flags);
-		ft_putstr_fd(str, 1);
-		result = ft_strlen(str) + (*flags)->width;
+		result += ft_print_savesymbol(flags);
+		result += ft_print_value(flags, str);
 	}
 	return (result);
 }

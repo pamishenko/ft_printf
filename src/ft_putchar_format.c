@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttanja <ttanja@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:41:52 by ttanja            #+#    #+#             */
-/*   Updated: 2021/05/28 20:21:47 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/10 07:33:25 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int	ft_putchar_format(char ch, t_flags **flags)
 {
 	if ((*flags)->minus != 0 && (*flags)->width > 1)
 	{
-		ft_putchar_fd(ch, 1);
+		ft_print_value(flags, &ch);
 		ft_print_savesymbol(flags);
 	}
 	else if ((*flags)->width > 1)
 	{
 		ft_print_savesymbol(flags);
-		ft_putchar_fd(ch, 1);
+		ft_print_value(flags, &ch);
 	}
 	else
 		ft_putchar_fd(ch, 1);

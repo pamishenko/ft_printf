@@ -6,38 +6,11 @@
 /*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:01:19 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/08 23:10:24 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/10 07:58:06 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_is_convesion(t_flags **flags, const char **format, size_t *i)
-{
-	if (ft_strchr("cspdiuxX%", (*format)[*i]))
-	{
-		if (*ft_strchr("cspdiuxX%", (*format)[*i]) == 'c')
-			(*flags)->conversion = CHARACTER;
-		else if (*ft_strchr("cspdiuxX%", (*format)[*i]) == 's')
-			(*flags)->conversion = STRING;
-		else if (*ft_strchr("cspdiuxX%", (*format)[*i]) == 'p')
-			(*flags)->conversion = POINTER;
-		else if (*ft_strchr("cspdiuxX%", (*format)[*i]) == 'd')
-			(*flags)->conversion = DIGIT;
-		else if (*ft_strchr("cspdiuxX%", (*format)[*i]) == 'i')
-			(*flags)->conversion = IDIGIT;
-		else if (*ft_strchr("cspdiuxX%", (*format)[*i]) == 'u')
-			(*flags)->conversion = UNSIGNEDIGIT;
-		else if (*ft_strchr("cspdiuxX%", (*format)[*i]) == 'x')
-			(*flags)->conversion = XDIGIT;
-		else if (*ft_strchr("cspdiuxX%", (*format)[*i]) == 'X')
-			(*flags)->conversion = XXDIGIT;
-		else if (*ft_strchr("cspdiuxX%", (*format)[*i]) == '%')
-			(*flags)->conversion = PERCENT;
-		return (1);
-	}
-	return (0);
-}
 
 void	ft_parse_flags(t_flags **flags, const char **format, size_t *i, va_list *ap)
 {
@@ -54,10 +27,10 @@ void	ft_parse_flags(t_flags **flags, const char **format, size_t *i, va_list *ap
 		}
 		else if (!((*flags)->minus) && (*format)[*i] == '0')
 			(*flags)->zero = 1;
-		else if ((*format)[*i] == '.')
-			(*flags)->dot = 1;
 		else if ((*format)[*i] == '*')
 			(*flags)->width = va_arg(*ap, unsigned int);
+		else if ((*format)[*i] == '.')
+			ft_parse_dot(flags, format, i, ap);
 		*i = *i + 1;
 	}
 }
