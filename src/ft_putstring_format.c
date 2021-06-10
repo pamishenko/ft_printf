@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstring_format.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
+/*   By: ttanja <ttanja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 18:20:20 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/10 08:07:16 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/10 16:38:52 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_set_width_string(t_flags **flag, unsigned int len)
-{
-	if ((long long int)(*flag)->width - len > 0)
-		(*flag)->width = (*flag)->width - len;
-	else
-		(*flag)->width = 0;
-}
 
 int	ft_putstring_format(char *strn, t_flags **flags)
 {
@@ -30,7 +22,6 @@ int	ft_putstring_format(char *strn, t_flags **flags)
 	else
 		str = strn;
 	result = 0;
-	ft_set_width_string(flags, ft_strlen(str));
 	if ((*flags)-> minus)
 	{
 		result += ft_print_value(flags, str);

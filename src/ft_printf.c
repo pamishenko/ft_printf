@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
+/*   By: ttanja <ttanja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:01:19 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/10 07:58:06 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/10 16:27:25 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_parse_flags(t_flags **flags, const char **format, size_t *i, va_list *ap)
+void	ft_parse_flags(t_flags **fl, const char **fr, size_t *i,	va_list *ap)
 {
-	ft_flag_init(flags);
-	while (((*format)[*i]) && !ft_is_convesion(flags, format, i))
+	ft_flag_init(fl);
+	while (((*fr)[*i]) && !ft_is_convesion(fl, fr, i))
 	{
-		if ((*format)[*i] == '-')
-			(*flags)->minus = 1;
-		else if ((*format)[*i] >= '1' && (*format)[*i] <= '9')
+		if ((*fr)[*i] == '-')
+			(*fl)->minus = 1;
+		else if ((*fr)[*i] >= '1' && (*fr)[*i] <= '9')
 		{
-			(*flags)->width = ft_atoi(&(*format)[*i]);
-			*i = *i + ft_count_razryad((*flags)->width, 10);
+			(*fl)->width = ft_atoi(&(*fr)[*i]);
+			*i = *i + ft_count_razryad((*fl)->width, 10);
 			continue ;
 		}
-		else if (!((*flags)->minus) && (*format)[*i] == '0')
-			(*flags)->zero = 1;
-		else if ((*format)[*i] == '*')
-			(*flags)->width = va_arg(*ap, unsigned int);
-		else if ((*format)[*i] == '.')
-			ft_parse_dot(flags, format, i, ap);
+		else if (!((*fl)->minus) && (*fr)[*i] == '0')
+			(*fl)->zero = 1;
+		else if ((*fr)[*i] == '*')
+			(*fl)->width = va_arg(*ap, unsigned int);
+		else if ((*fr)[*i] == '.')
+			ft_parse_dot(fl, fr, i, ap);
 		*i = *i + 1;
 	}
 }

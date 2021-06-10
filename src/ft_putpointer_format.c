@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putpointer_format.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
+/*   By: ttanja <ttanja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 20:48:06 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/10 10:18:55 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/10 16:23:10 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_putpointer_format(long long point, t_flags **flags)
 		(*flags)->dot = 16;
 	}
 	ft_putstring_format(print, flags);
-	printf("внутри поинтпринта %s    b   %s", print, temp);
 	free(print);
 	return ((*flags)->dot);
 }

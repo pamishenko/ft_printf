@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_savesymbol.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttanja <pamishenko@gmail.com>              +#+  +:+       +#+        */
+/*   By: ttanja <ttanja@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 20:21:02 by ttanja            #+#    #+#             */
-/*   Updated: 2021/06/10 14:15:17 by ttanja           ###   ########.fr       */
+/*   Updated: 2021/06/10 16:03:35 by ttanja           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 long long	ft_print_savesymbol(t_flags **flag)
 {
-	char				r;
+	char		r;
 	long long	result;
 
 	if ((((*flag)->width) - ((*flag)->dot)) > 0)
 		(*flag)->width = ((*flag)->width) - ((*flag)->dot);
 	else
 		(*flag)->width = 0;
-	result = (*flag)->width;VYVVdsfb 
+	result = (*flag)->width;
 	if ((*flag)->zero == 1 && (*flag)->conversion != POINTER)
 		r = '0';
 	else
@@ -30,7 +30,6 @@ long long	ft_print_savesymbol(t_flags **flag)
 	{
 		ft_putchar_fd(r, 1);
 		(*flag)->width = (*flag)->width - 1;
-		printf("\n what is it????  %lld\n", (*flag)->width);
 	}
 	return (result);
 }
